@@ -135,18 +135,13 @@ Extra included packages are
 
 - wget
 - vim
+- python3
 
 ### Installation
 
-This continer should normaly run as a daemon i.e with the `-d` flag attached
+Test the container and remove on exit:
 
-	docker run -d schast/ubuntu
-
-but if you want to check if all services has been started correctly you can start with the following command
-
-	docker run -ti schast/ubuntu
-
-the output, if working correctly should be
+	docker run --rm --name ubuntuTest --memory="768m" schast/docker-ubuntu:14.04
 
 	docker run -ti schast/ubuntu
 	*** open logfile
@@ -154,24 +149,40 @@ the output, if working correctly should be
 	*** Run files in /etc/my_runalways/
 	*** Running /etc/rc.local...
 	*** Booting supervisor daemon...
-	*** Supervisor started as PID 11
-	2015-01-02 10:45:43,750 CRIT Set uid to user 0
+	*** Supervisor started as PID 8
+	2016-01-04 18:25:30,618 CRIT Set uid to user 0
 	*** Started processes via Supervisor......
-	crond                            RUNNING    pid 15, uptime 0:00:02
-	syslog-ng                        RUNNING    pid 14, uptime 0:00:02
+	crond                            RUNNING    pid 12, uptime 0:00:04
+	syslog-ng                        RUNNING    pid 11, uptime 0:00:04
 
-pressing a CTRL-C in that window  or running `docker stop <container ID>` will generate the following output
+pressing a CTRL-C in that window or running `docker stop <container ID/Name>` will generate the following output
 
-	*** Shutting down supervisor daemon (PID 11)...
+	*** Shutting down supervisor daemon (PID 8)...
 	*** Killing all processes...
+
+Connect to running container:
+
+	docker exec -it <container ID/Name> /bin/bash
+
+
+Run container as a daemon:
+
+	docker run -d --name myUbuntu --hostname myHostname.myDomain \
+		--memory="768m" \
+		schast/docker-ubuntu:14.04
+
 
 you can the restart that container with
 
-	docker start <container ID>
+	docker start <container ID/Name>
 
-Accessing the container with a bash shell can be done with
 
-	docker exec -ti <container ID> /bin/bash
+### Build own Image
+
+	git clone https://github.com/schast/docker-ubuntu.git docker-ubuntu.git
+	cd docker-ubuntu.git
+	docker build --force-rm -f Dockerfile_14.04 -t YourName/docker-ubuntu:14.04 .
+
 
 ### TAGs
 
@@ -180,6 +191,7 @@ This image contains following versions of Ubuntu (schast/ubuntu:<tag>):
 - 14.04  -  this gives the 14.04 LTS version
 - 15.10  -  this gives the 15.10 version
 - 16.04  -  this gives the 16.04 LTS version (beta)
+
 
 ### Forked from
 [nimmis/docker-ubuntu](https://github.com/nimmis/docker-ubuntu/)

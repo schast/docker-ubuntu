@@ -1,7 +1,7 @@
 # https://github.com/nimmis/docker-ubuntu
 
 
-FROM ubuntu:14.04
+FROM ubuntu:15.10
 
 MAINTAINER Stefan Schatz <stefan.schatz@osbg.at>
 

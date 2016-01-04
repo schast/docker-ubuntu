@@ -21,7 +21,7 @@ apt-get update
 apt-get -y --no-install-recommends dist-upgrade
 
 # installing required packages
-apt-get install -y --no-install-recommends wget vim syslog-ng syslog-ng-core supervisor cron logrotate
+apt-get install -y --no-install-recommends wget vim python3 syslog-ng syslog-ng-core supervisor cron logrotate
 
 
 # syslog-ng: can't access /proc/kmsg. https://groups.google.com/forum/#!topic/docker-user/446yoB0Vx6w
