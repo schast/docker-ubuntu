@@ -1,4 +1,4 @@
-## Ubuntu with some extra commands
+## Docker Ubuntu Image with a working init process and syslog
  [![Docker Hub; schast/docker-ubuntu](https://img.shields.io/badge/dockerhub-schast%2Fubuntu-green.svg)](https://registry.hub.docker.com/u/schast/ubuntu)
  [![](https://badge.imagelayers.io/schast/ubuntu:14.04.svg)](https://imagelayers.io/?images=schast/ubuntu:latest 'Get your own badge on imagelayers.io')
 
@@ -175,9 +175,7 @@ Accessing the container with a bash shell can be done with
 
 ### TAGs
 
-This image only contains the 2 latest LTS versions of Ubuntu 12.04 and 14.04, the versions are
-schast/ubuntu:<tag> where tag is
-
+This image contains following versions of Ubuntu (schast/ubuntu:<tag>):
 - latest -  this gives the latest LTS version (14.04)
 - 14.04  -  this gives the 14.04 LTS version
 - 15.10  -  this gives the 15.10 version
@@ -185,6 +183,7 @@ schast/ubuntu:<tag> where tag is
 
 ### Forked from
 [nimmis/docker-ubuntu](https://github.com/nimmis/docker-ubuntu/)
+
 [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker)
 
 
