@@ -1,0 +1,34 @@
+# https://github.com/nimmis/docker-ubuntu
+
+
+FROM ubuntu:14.04
+
+MAINTAINER Stefan Schatz <stefan.schatz@osbg.at>
+
+# disable interactive functions
+ENV DEBIAN_FRONTEND noninteractive
+
+# Do OS fixes
+COPY bin/fix.sh /tmp/fix.sh
+RUN /tmp/fix.sh && rm -f /tmp/fix.sh
+
+# configure supervisor
+COPY ./supervisor/supervisord.conf /etc/supervisor/
+COPY ./supervisor/conf.d/crond.conf /etc/supervisor/conf.d/
+COPY ./supervisor/conf.d/syslog-ng.conf /etc/supervisor/conf.d/
+
+# Add my_init script and help scripts 
+COPY bin/setuser /usr/local/bin/setuser
+COPY bin/my_init /sbin/my_init
+COPY bin/my_service /sbin/my_service
+
+# Set environment variables.
+ENV HOME /root
+
+# Define working directory.
+WORKDIR /root
+
+# Define default command.
+CMD ["/sbin/my_init"]
+
+
