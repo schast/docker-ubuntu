@@ -9,8 +9,8 @@ MAINTAINER Stefan Schatz <stefan.schatz@osbg.at>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Do OS fixes
-COPY bin/fix.sh /tmp/fix.sh
-RUN /tmp/fix.sh && rm -f /tmp/fix.sh
+COPY bin/fix.sh /root/fix.sh
+RUN /root/fix.sh && rm -f /root/fix.sh
 
 # configure supervisor
 COPY supervisor/supervisord.conf /etc/supervisor/

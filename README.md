@@ -134,6 +134,8 @@ There are a number of commands that most uses and adds to their build, in this b
 Extra included packages are
 
 - wget
+- curl
+- ca-certificates
 - vim
 - python3
 

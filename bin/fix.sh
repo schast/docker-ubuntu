@@ -21,7 +21,7 @@ apt-get update
 apt-get -y --no-install-recommends dist-upgrade
 
 # installing required packages
-apt-get install -y --no-install-recommends wget vim python3 syslog-ng syslog-ng-core supervisor cron logrotate
+apt-get install -y --no-install-recommends wget curl ca-certificates vim python3 syslog-ng syslog-ng-core supervisor cron logrotate
 
 
 # syslog-ng: can't access /proc/kmsg. https://groups.google.com/forum/#!topic/docker-user/446yoB0Vx6w
@@ -29,7 +29,8 @@ sed -i -E 's/^(\s*)system\(\);/\1unix-stream("\/dev\/log");/' /etc/syslog-ng/sys
 
 
 # clean up after
-apt-get clean
+apt-get -y clean
+apt-get -y autoremove
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
     
