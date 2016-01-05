@@ -1,6 +1,6 @@
 ## Docker Ubuntu Image with a working init process and syslog
  [![Docker Hub; schast/docker-ubuntu](https://img.shields.io/badge/dockerhub-schast%2Fubuntu-green.svg)](https://registry.hub.docker.com/u/schast/ubuntu)
- [![](https://badge.imagelayers.io/schast/ubuntu:14.04.svg)](https://imagelayers.io/?images=schast/ubuntu:latest 'Get your own badge on imagelayers.io')
+ [![](https://badge.imagelayers.io/schast/ubuntu:14.04.svg)](https://imagelayers.io/?images=schast/ubuntu:14.04 'Get your own badge on imagelayers.io')
 
 This is a Ubuntu docker image with a working init process and syslog
 

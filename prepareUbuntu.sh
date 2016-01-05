@@ -15,7 +15,7 @@ ln -sf /bin/true /usr/bin/ischroot
 sed -i 's/^#\s*\(deb.*multiverse\)$/\1/g' /etc/apt/sources.list
 
 # update package list
-apt-get update
+apt-get -y update
 
 # do a update on all installed packages
 apt-get -y --no-install-recommends dist-upgrade
