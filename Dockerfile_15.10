@@ -8,6 +8,7 @@ MAINTAINER Stefan Schatz <stefan.schatz@osbg.at>
 # disable interactive functions
 ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
+ENV TERM xterm
 
 # Do OS fixes
 COPY prepareUbuntu.sh /root/prepareUbuntu.sh
