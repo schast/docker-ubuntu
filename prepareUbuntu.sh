@@ -18,7 +18,8 @@ sed -i 's/^#\s*\(deb.*multiverse\)$/\1/g' /etc/apt/sources.list
 apt-get -y update
 
 # do a update on all installed packages
-apt-get -y --no-install-recommends dist-upgrade
+#apt-get -y --no-install-recommends dist-upgrade
+apt-get -y dist-upgrade
 
 # installing required packages
 apt-get install -y --no-install-recommends wget curl ca-certificates vim python3 syslog-ng syslog-ng-core supervisor cron logrotate
