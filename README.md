@@ -1,6 +1,6 @@
 ## Docker Ubuntu Image with a working init process and syslog
  [![Docker Hub; schast/docker-ubuntu](https://img.shields.io/badge/dockerhub-schast%2Fubuntu-green.svg)](https://registry.hub.docker.com/u/schast/ubuntu)
- [![](https://badge.imagelayers.io/schast/ubuntu:14.04.svg)](https://imagelayers.io/?images=schast/ubuntu:14.04 'Get your own badge on imagelayers.io')
+ [![](https://badge.imagelayers.io/schast/ubuntu:16.04.svg)](https://imagelayers.io/?images=schast/ubuntu:16.04 'Get your own badge on imagelayers.io')
 
 This is a Ubuntu docker image with a working init process and syslog
 
@@ -143,7 +143,7 @@ Extra included packages are
 
 Test the container and remove on exit:
 
-	docker run --rm --name ubuntuTest --memory="768m" schast/docker-ubuntu:14.04
+	docker run --rm --name ubuntuTest --memory="768m" schast/docker-ubuntu:16.04
 
 	docker run -ti schast/ubuntu
 	*** open logfile
@@ -171,7 +171,7 @@ Run container as a daemon:
 
 	docker run -d --name myUbuntu --hostname myHostname.myDomain \
 		--memory="768m" \
-		schast/docker-ubuntu:14.04
+		schast/docker-ubuntu:16.04
 
 
 you can the restart that container with
@@ -183,16 +183,14 @@ you can the restart that container with
 
 	git clone https://github.com/schast/docker-ubuntu.git docker-ubuntu.git
 	cd docker-ubuntu.git
-	docker build --force-rm -f Dockerfile_14.04 -t YourName/docker-ubuntu:14.04 .
+	docker build --force-rm -f Dockerfile_16.04 -t YourName/docker-ubuntu:16.04 .
 
 
 ### TAGs
 
 This image contains following versions of Ubuntu (schast/ubuntu:<tag>):
-- latest -  this gives the latest LTS version (14.04)
-- 14.04  -  this gives the 14.04 LTS version
-- 15.10  -  this gives the 15.10 version
-- 16.04  -  this gives the 16.04 LTS version (beta)
+- latest -  this gives the latest LTS version (16.04)
+- 16.04  -  this gives the 16.04 LTS version
 
 
 ### Forked from
