@@ -16,20 +16,17 @@ RUN /root/prepareUbuntu.sh && rm -f /root/prepareUbuntu.sh
 
 # configure supervisor
 COPY supervisor/ /etc/supervisor/
-#COPY supervisor/supervisord.conf /etc/supervisor/
-#COPY supervisor/conf.d/crond.conf /etc/supervisor/conf.d/
-#COPY supervisor/conf.d/syslog-ng.conf /etc/supervisor/conf.d/
 
-# Add my_init script and help scripts 
+# Add my_init script and help scripts
 COPY bin/ /sbin/
-#COPY bin/setuser /usr/local/bin/setuser
-#COPY bin/my_init /sbin/my_init
-#COPY bin/my_service /sbin/my_service
+
+# add runonce and runalways scripts
+COPY my_runonce/ /etc/my_runonce/
+COPY my_runalways/ /etc/my_runalways/
 
 # Define working directory.
 WORKDIR /root
 
 # Define default command.
 CMD ["/sbin/my_init"]
-
 
