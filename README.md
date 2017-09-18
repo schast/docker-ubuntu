@@ -1,6 +1,5 @@
 ## Docker Ubuntu Image with a working init process and syslog
- [![Docker Hub; schast/docker-ubuntu](https://img.shields.io/badge/dockerhub-schast%2Fdocker-ubuntu.svg)](https://registry.hub.docker.com/u/schast/docker-ubuntu)
-[![](https://images.microbadger.com/badges/image/schast/docker-ubuntu.svg)](https://microbadger.com/images/schast/docker-ubuntu "Get your own image badge on microbadger.com")|
+[![Docker Hub; schast/docker-ubuntu](https://img.shields.io/badge/dockerhub-schast%2Fdocker-ubuntu.svg)](https://registry.hub.docker.com/u/schast/docker-ubuntu) [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu.svg)](https://microbadger.com/images/schast/docker-ubuntu "Get your own image badge on microbadger.com")|
 
 This is a Ubuntu docker image with a working init process and syslog
 
@@ -228,10 +227,12 @@ This image contains following versions of Ubuntu (schast/docker-ubuntu:<tag>):
 
 | tag    | ubuntu version | size |
 | ------ | -------------- | ---- |
-| 16.04 |  16.04    | [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu:16.04.svg)](https://microbadger.com/images/schast/docker-ubuntu:16.04 "Get your own image badge on microbadger.com")|
-| 14.04 |  14.04    | [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu:14.04.svg)](https://microbadger.com/images/schast/ubuntu:14.04 "Get your own image badge on microbadger.com")|
+| 17.10 |  17.10    | [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu:17.10.svg)](https://microbadger.com/images/schast/docker-ubuntu:17.10 "Get your own image badge on microbadger.com")|
+| 16.04 |  16.04 LTS    | [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu:16.04.svg)](https://microbadger.com/images/schast/docker-ubuntu:16.04 "Get your own image badge on microbadger.com")|
+| 14.04 |  14.04 LTS    | [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu:14.04.svg)](https://microbadger.com/images/schast/ubuntu:14.04 "Get your own image badge on microbadger.com")|
 
 ### Forked from
-[nimmis/docker-ubuntu](https://github.com/nimmis/docker-ubuntu/)<br />
+[nimmis/docker-ubuntu](https://github.com/nimmis/docker-ubuntu/)
+
 [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker)
 
