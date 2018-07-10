@@ -64,10 +64,8 @@ def open_logfile():
     try:
         info('open logfile')
         logfile = open(LOGFILE_NAME, 'r')
-    except:
-        #info("Error opening " + filename)
-        info("Error logfil(" + LOGFILE_NAME +
-             ") raised " + str(sys.exc_info()[0]))
+    except Exception as e:
+        info("Error opening logfile({}), exception({}), exc_info({})".format(LOGFILE_NAME, e, str(sys.exc_info()[0])))
         logfile = None
 
 
@@ -85,16 +83,14 @@ def clear_logfile():
     if logfile is not None:
         try:
             logfile.close()
-        except:
-            info("Error closing logfile " + LOGFILE_NAME +
-                 " raised " + str(sys.exc_info()[0]))
+        except Exception as e:
+            info("Error closing logfile({}), exception({}), exc_info({})".format(LOGFILE_NAME, e, str(sys.exc_info()[0])))
     try:
         logfile = open(LOGFILE_NAME, 'w')
         logfile.write("")
         logfile.close()
-    except:
-        info("Error clearing logfile " + LOGFILE_NAME +
-             " raised " + str(sys.exc_info()[0]))
+    except Exception as e:
+        info("Error clearing logfile({}), exception({}), exc_info({})".format(LOGFILE_NAME, e, str(sys.exc_info()[0])))
 
 
 def ignore_signals_and_raise_keyboard_interrupt(signame):
