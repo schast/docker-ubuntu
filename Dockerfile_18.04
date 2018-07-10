@@ -1,7 +1,7 @@
 # https://github.com/nimmis/docker-ubuntu
 
 
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 
 MAINTAINER Stefan Schatz <stefan.schatz@osbg.at>
 
@@ -29,4 +29,3 @@ WORKDIR /root
 
 # Define default command.
 CMD ["/sbin/my_init"]
-

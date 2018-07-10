@@ -140,7 +140,7 @@ Extra included packages are
 #### Test the container and remove on exit
 
 ```bash
-docker run --rm --name ubuntuTest --memory="768m" schast/docker-ubuntu:16.04
+docker run --rm --name ubuntuTest --memory="768m" schast/docker-ubuntu:18.04
 
 docker run -ti schast/ubuntu
 *** open logfile
@@ -171,7 +171,7 @@ docker exec -it <container ID/Name> /bin/bash
 ```
 docker run -d --name myUbuntu --hostname myHostname.myDomain \
 	--memory="768m" \
-	schast/docker-ubuntu:16.04
+	schast/docker-ubuntu:18.04
 ```
 
 #### restart container with
@@ -183,7 +183,7 @@ docker start <container ID/Name>
 ```
 git clone https://github.com/schast/docker-ubuntu.git docker-ubuntu.git
 cd docker-ubuntu.git
-docker build --force-rm -f Dockerfile_16.04 -t YourName/docker-ubuntu:16.04 .
+docker build --force-rm -f Dockerfile_18.04 -t YourName/docker-ubuntu:18.04 .
 ```
 
 ### Commands and Environment variables
@@ -206,7 +206,7 @@ set_tz list
 ### set timezone on startup
 Add the environment variable TIMEZONE to the desired timezone, i.e to set timezone to CET Vienna
 ```
-docker run -d -e TIMEZONE="Europe/Vienna" schast/docker-ubuntu:16.04
+docker run -d -e TIMEZONE="Europe/Vienna" schast/docker-ubuntu:18.04
 ```
 
 ### set timezone in running container
@@ -219,7 +219,7 @@ docker exec -ti <docker ID> set_tz Europe/Vienna
 Execute the following command, it will list available timezones and then
 remove the container
 ```
-docker run --rm schast/docker-ubuntu:16.04 set_tz list
+docker run --rm schast/docker-ubuntu:18.04 set_tz list
 ```
 
 ### TAGs
@@ -227,9 +227,8 @@ This image contains following versions of Ubuntu (schast/docker-ubuntu:<tag>):
 
 | tag    | ubuntu version | size |
 | ------ | -------------- | ---- |
-| 17.10 |  17.10    | [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu:17.10.svg)](https://microbadger.com/images/schast/docker-ubuntu:17.10 "Get your own image badge on microbadger.com")|
+| 18.04 |  18.04 LTS    | [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu:18.04.svg)](https://microbadger.com/images/schast/docker-ubuntu:18.04 "Get your own image badge on microbadger.com")|
 | 16.04 |  16.04 LTS    | [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu:16.04.svg)](https://microbadger.com/images/schast/docker-ubuntu:16.04 "Get your own image badge on microbadger.com")|
-| 14.04 |  14.04 LTS    | [![](https://images.microbadger.com/badges/image/schast/docker-ubuntu:14.04.svg)](https://microbadger.com/images/schast/ubuntu:14.04 "Get your own image badge on microbadger.com")|
 
 ### Forked from
 [nimmis/docker-ubuntu](https://github.com/nimmis/docker-ubuntu/)
